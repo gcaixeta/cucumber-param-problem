@@ -1,0 +1,9 @@
+.bundle
+log/*.log
+tmp/*
+.bundle/*
+.DS_Store
+*~
+*.autosave
+*.swp
+*.swo
