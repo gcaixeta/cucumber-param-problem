@@ -1,5 +1,6 @@
 <h1>Listing categories</h1>
-
+<% form_tag selected_categories_path do |f| -%>
+  
 <table>
   <tr>
     <th>Name</th>
@@ -10,13 +11,18 @@
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%= category.name %></td>
+    <td><%= check_box_tag "category_ids[]", category.id, false, {:id => "category_ids_#{category.id}" } -%></td>
+    <td><%= label_tag category.name, nil, {:for =>  "category_ids_#{category.id}"} %></td>
     <td><%= link_to 'Show', category %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
     <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
+
+<%= submit_tag "Select Categories" %>
+
+<% end -%>
 
 <br />
 

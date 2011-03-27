@@ -1,4 +1,8 @@
 class CategoriesController < ApplicationController
+
+  def selected
+    @categories = Category.find(params[:category_ids])
+  end
   # GET /categories
   # GET /categories.xml
   def index

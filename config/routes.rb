@@ -1,5 +1,7 @@
 CucumberParamProblem::Application.routes.draw do
-  resources :categories
+  resources :categories do
+    post 'selected', :on => :collection
+  end
   root :to => "categories#index"
 
   # The priority is based upon order of creation:
