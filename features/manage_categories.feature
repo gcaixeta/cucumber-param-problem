@@ -19,6 +19,6 @@ Feature: Manage categories
     When I delete the 3rd category
     Then I should see the following categories:
       |Name|
-      |name 1|
-      |name 2|
-      |name 4|
+      |Name 1|
+      |Name 2|
+      |Name 4|
