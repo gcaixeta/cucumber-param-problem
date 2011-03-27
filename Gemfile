@@ -8,6 +8,7 @@ gem 'rails', '3.0.5'
 gem 'sqlite3'
 
 group :development, :test do
+  gem "rspec-rails", "~> 2.4"
   gem 'cucumber-rails', '0.4.0'
   gem 'capybara'
   gem 'database_cleaner'
