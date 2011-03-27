@@ -7,3 +7,4 @@ tmp/*
 *.autosave
 *.swp
 *.swo
+db/*.sqlite3
