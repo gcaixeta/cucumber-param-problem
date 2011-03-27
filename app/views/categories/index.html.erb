@@ -1,6 +1,6 @@
 <h1>Listing categories</h1>
-<%= form_tag selected_categories_path do %>
-  
+<%= form_tag selected_categories_path, :multipart => true do %>
+  <%= file_field_tag 'attachment' -%>
 <table>
   <tr>
     <th>Select</th>
