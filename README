@@ -1,16 +1,27 @@
-== Description
+## Description
 
 This project just isolate a problem in cucumber (or other library)
 
-The problem is:
-
-When the form is :multipart => true and have any file input
-
 You can see the difference of param in log
+
+When multipart => false the Params is:
 
 Parameters: {"commit"=>"Select Categories", "attachment"=>"", "utf8"=>"\342\234\223", "category_ids"=>["22", "25"]}
 
+When multipart => true and have a file input the Params is:
+
 Parameters: {"commit"=>"Select Categories", "utf8"=>"\342\234\223", "category_ids"=>["2629"]}
+
+
+So the params is:
+"category_ids"=>["2629"]
+
+It should be:
+"category_ids"=>["26", "29"]
+
+in the test env, with a multipart form and a file input, it merge multiple values into a single string.
+
+This behaviour just happens in the test env. I dont know if is really a issue of cucumber or any other thing related.
 
 tail -f log/test.log | grep Param
 
